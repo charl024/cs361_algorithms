@@ -1,10 +1,5 @@
 def insertionSortIterative(A):
-    n = len(A)
-
-    if n <= 1:
-        return
-    
-    for i in range(1, n):
+    for i in range(1, len(A)):
         key = A[i]
         j = i - 1
         while j >= 0 and key < A[j]:
