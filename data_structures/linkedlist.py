@@ -9,34 +9,20 @@ class LinkedList:
 
     def insertStart(self, data):
         node = Node(data)
-        if self.head == None:
-            self.head = node
-        else:
-            node.next = self.head
-            self.head = node
-
-    def insertEnd(self, data):
-        node = Node(data)
-        if self.head == None:
-            self.head = node
-
-        currNode = self.head
-        while (currNode.next):
-            currNode = currNode.next
-
-        currNode.next = node
+        node.next = self.head
+        self.head = node
 
     def removeStart(self):
-        self.head = self.head.next            
-
-    def search(self, data):
-        currNode = self.head
-        if currNode == None:
+        if self.head is None:
             return
-        
-        while (currNode.next):
-            if currNode.data == data:
-                return data
-            currNode = currNode.next
+        self.head = self.head.next
 
-        return    
+        
+
+test = LinkedList()
+test.insertStart(12)
+test.insertStart(15)
+test.insertEnd(9)
+
+print(test.search(6))
+print(test.search(13))
